@@ -1,0 +1,170 @@
+#include "PeopleWindow.h"
+
+#define TEXT_HEIGHT			 16
+
+#define FIRSTNAME_H			10
+#define FIRSTNAME_V			10
+#define FIRSTNAME_W			(TABVIEW_WM / 2)
+
+#define LASTNAME_H			(FIRSTNAME_H + FIRSTNAME_W)
+#define LASTNAME_V			10
+#define LASTNAME_W			(TABVIEW_WM / 2)
+
+#define TITLE_H				10
+#define TITLE_V				(LASTNAME_V + 25)
+#define TITLE_W				(TABVIEW_WM / 2)
+
+#define NICKNAME_H			(TITLE_H + TITLE_W)
+#define NICKNAME_V			(LASTNAME_V + 25)
+#define NICKNAME_W			(TABVIEW_WM / 2)
+
+#define GROUP_H				 10
+#define GROUP_V				(TITLE_V + 25)
+#define GROUP_W				TABVIEW_WM
+
+// home stuff
+
+#define HOME_ADDRESS_H			10
+#define HOME_ADDRESS_V			10
+#define HOME_ADDRESS_W			TABVIEW_WM
+
+#define HOME_ADDRESS2_H			10
+#define HOME_ADDRESS2_V			(HOME_ADDRESS_V + 25)
+#define HOME_ADDRESS2_W			TABVIEW_WM
+
+#define HOME_CITY_H				 10
+#define HOME_CITY_V				(HOME_ADDRESS2_V + 25)
+#define HOME_CITY_W				TABVIEW_WM
+
+#define HOME_STATE_H			10
+#define HOME_STATE_V			(HOME_CITY_V + 25)
+#define HOME_STATE_W			(TABVIEW_WM / 3*2)
+
+#define HOME_ZIP_CODE_H			(HOME_STATE_H + HOME_STATE_W)
+#define HOME_ZIP_CODE_V			(HOME_CITY_V + 25)
+#define HOME_ZIP_CODE_W			(TABVIEW_WM / 3)
+
+#define HOME_COUNTRY_H			10
+#define HOME_COUNTRY_V			(HOME_ZIP_CODE_V + 25)
+#define HOME_COUNTRY_W			TABVIEW_WM
+
+#define HOME_PHONE_H			10
+#define HOME_PHONE_V			(HOME_COUNTRY_V + 25)
+#define HOME_PHONE_W			(TABVIEW_WM / 2)
+
+#define HOME_FAX_H				( HOME_PHONE_H + HOME_PHONE_W )
+#define HOME_FAX_V				(HOME_COUNTRY_V + 25)
+#define HOME_FAX_W				(TABVIEW_WM / 2)
+
+#define HOME_CELL_PHONE_H		10
+#define HOME_CELL_PHONE_V		(HOME_FAX_V + 25)
+#define HOME_CELL_PHONE_W		(TABVIEW_WM / 2)
+
+// no home pager
+
+#define HOME_EMAIL_H			10
+#define HOME_EMAIL_V			(HOME_CELL_PHONE_V + 25)
+#define HOME_EMAIL_W			TABVIEW_WM
+
+#define HOME_URL_H				10
+#define HOME_URL_V				(HOME_EMAIL_V + 25)
+#define HOME_URL_W				TABVIEW_WM
+
+
+
+// WORK STUFF
+
+#define WORK_COMPANY_NAME_H		10
+#define WORK_COMPANY_NAME_V		10
+#define WORK_COMPANY_NAME_W		TABVIEW_WM
+
+#define WORK_POSITION_H			10
+#define WORK_POSITION_V			(WORK_COMPANY_NAME_V + 25)
+#define WORK_POSITION_W			TABVIEW_WM
+
+#define WORK_ADDRESS_H			10
+#define WORK_ADDRESS_V			(WORK_POSITION_V + 25)
+#define WORK_ADDRESS_W			TABVIEW_WM
+
+#define WORK_ADDRESS2_H			10
+#define WORK_ADDRESS2_V			(WORK_ADDRESS_V + 25)
+#define WORK_ADDRESS2_W			TABVIEW_WM
+
+#define WORK_CITY_H				10
+#define WORK_CITY_V				(WORK_ADDRESS2_V + 25)
+#define WORK_CITY_W				TABVIEW_WM
+
+#define WORK_STATE_H			10
+#define WORK_STATE_V			(WORK_CITY_V + 25)
+#define WORK_STATE_W			(TABVIEW_WM / 3*2)
+
+#define WORK_ZIP_CODE_H			(WORK_STATE_H + WORK_STATE_W)
+#define WORK_ZIP_CODE_V			(WORK_CITY_V + 25)
+#define WORK_ZIP_CODE_W			(TABVIEW_WM / 3)
+
+#define WORK_COUNTRY_H			10
+#define WORK_COUNTRY_V			(WORK_ZIP_CODE_V + 25)
+#define WORK_COUNTRY_W			TABVIEW_WM
+
+#define WORK_PHONE_H			10
+#define WORK_PHONE_V			(WORK_COUNTRY_V + 25)
+#define WORK_PHONE_W			(TABVIEW_WM / 2)
+
+#define WORK_FAX_H				( WORK_PHONE_H + WORK_PHONE_W )
+#define WORK_FAX_V				(WORK_COUNTRY_V + 25)
+#define WORK_FAX_W				(TABVIEW_WM / 2)
+
+#define WORK_CELL_PHONE_H		10
+#define WORK_CELL_PHONE_V		(WORK_FAX_V + 25)
+#define WORK_CELL_PHONE_W		(TABVIEW_WM / 2)
+
+#define WORK_PAGER_H			( WORK_CELL_PHONE_H + WORK_CELL_PHONE_W ) 
+#define WORK_PAGER_V			(WORK_FAX_V + 25)
+#define WORK_PAGER_W			(TABVIEW_WM / 2)
+
+#define WORK_EMAIL_H			10
+#define WORK_EMAIL_V			(WORK_PAGER_V + 25)
+#define WORK_EMAIL_W			TABVIEW_WM
+
+#define WORK_URL_H				10
+#define WORK_URL_V				(WORK_EMAIL_V + 25)
+#define WORK_URL_W				TABVIEW_WM
+
+
+// internet stuff
+
+#define INET_EMAIL3_H			10
+#define INET_EMAIL3_V			10
+#define INET_EMAIL3_W			TABVIEW_WM
+
+#define INET_EMAIL4_H			10
+#define INET_EMAIL4_V			(INET_EMAIL3_V + 25)
+#define INET_EMAIL4_W			TABVIEW_WM
+
+#define INET_EMAIL5_H			10
+#define INET_EMAIL5_V			(INET_EMAIL4_V + 25)
+#define INET_EMAIL5_W			TABVIEW_WM
+
+#define INET_URL3_H				10
+#define INET_URL3_V				(INET_EMAIL5_V + 25)
+#define INET_URL3_W				TABVIEW_WM
+
+#define INET_ICQ_H				10
+#define INET_ICQ_V				(INET_URL3_V + 25)
+#define INET_ICQ_W				(TABVIEW_WM / 2)
+
+#define INET_AIM_H				( INET_ICQ_H + INET_ICQ_W )
+#define INET_AIM_V				(INET_URL3_V + 25)
+#define INET_AIM_W				(TABVIEW_WM / 2)
+
+#define INET_YAHOO_H			10
+#define INET_YAHOO_V			(INET_AIM_V + 25)
+#define INET_YAHOO_W			(TABVIEW_WM / 2)
+
+#define INET_MSN_H				( INET_YAHOO_H + INET_YAHOO_W)
+#define INET_MSN_V				(INET_AIM_V + 25)
+#define INET_MSN_W				(TABVIEW_WM / 2)
+
+#define INET_JABBER_H			10
+#define INET_JABBER_V			(INET_YAHOO_V + 25)
+#define INET_JABBER_W			TABVIEW_WM

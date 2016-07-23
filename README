@@ -1,0 +1,119 @@
+DeeperPeople 3.0dr8
+by Olivier Cortes (olive@deep-ocean.net)
+
+Conceptual notes
+
+I want this app to become something you can easily work with. A program that helps you and doesn't suck (or suck less than others...). if you let it do some things, it will not waste your time. Here is one idea : persons have a first name and a last name. these (in your contacts) are quite unique (more or less). It can be considered as "efficient" that your FILES are named "FirstName LastName [number]" automatically, without asking you.
+I call this thing "Auto_Save" and "Auto_Rename".
+All the People files you create will have the same clean naming scheme. In a near future (as soon as i implement preferences, you will be able to choose the scheme that fits best to you.
+
+The first time you open every people file created with old apps, you will see a first name containing the COMPLETE name, and a last name field containing "CHANGE-ME". Please take time to correct this. It will be done only ONCE.
+	* it is this way because i've no accurate way to split the complete name and guess the correct first and last part of a name,
+	* once you have modified the fields, the old complete name is automatically recreated (for BeMail and other old app that can't evolve),
+	* the auto_rename feature will be fully fonctionnal, and you won't see any " first last CHANGE-ME" file any more.
+
+Warnings -  Manual
+
+	DeeperPeople is DR. it stands for Developer Release. You have no waranties. be sure that if it crashes your computer, it crashes mine too. The app is unfinished, but i'm improving it in a weekly basis. I compiled it in DEBUG MODE, so that you can mail me the stack when it crashes.
+
+	When you launch the program, the tree doesn't contain anything. It's built by a thread which will tell you when it has finished (i've got more than 120 people files, and it takes 3 or 4 seconds to build). the search will be activated when it is finished.
+
+	Double click in the tree (the list) on a person to edit it. you don't have to worry about saving the previously open person, it will be automatically done.
+
+	Search : hit Command F. Type a bit of the first/last/nick name or notes, and DeeperPeople will find it (hit Tab or Enter to begin the search). Then hit Command G, it will find next. The reverse mode doesn't work. You can type whatever you want. If you are looking for "Peter Dupont", you can type "Pete", "Dup", "ont" with or without uppercase (the search is case insensitive).
+
+	Command L and Command D collapse and expand the whole tree.
+
+	Hiting Command N will close the open person (saving it if needed) and bring a new empty one.
+
+	Click on the different e-mail LABELS (not the fields) when you have an e-mail address in the corresponding field. It uses /boot/apps/BeMail to launch your preferred mail client. just build a link from /boot/apps/Scooby/Scooby to /boot/apps/BeMail if you want to use scooby  and do the same if you use another mailer (it will be in prefs).
+	
+==> mail me (olive@deep-ocean.net) about anything you find funky, or about new ideas you have, except about what i say in the notes below. You will be added to my People files, and you will be emailed when new versions are released.
+==> all your contributions will appear on the DeeperPeople web site.
+
+
+Installation
+
+* Put it anywhere you like.
+* that's all ! (no zip of older versions, no deletion, no... problems ;-) )
+
+(if something goes wrong on first launch, delete your Person MIME-type and re-launch. Else mail me)
+
+
+Known Bugs or things on the road
+
+* the tree liveness is on the way.
+* when the app is open, sometimes bemail refuses to save an adress, pretexting it couldn't find app app to deal with persons.
+* DeeperPeople will FOR SURE come with multi-lang support (like People v2.x), but when it will be officially released (not DRx).
+* forget about the apearance of the notes (yes, it's one line , i will rewrite TTextControl), it just works.
+* users don't send so much feedback. don't know where this bug come from ;-p
+
+Thanks
+
+to all (real) persons who have contributed to the project until now. You can find their names on the DeeperPeople web page:
+
+http://www.deep-ocean.net/~olive/DeeperPeople/
+
+
+History
+
+dr8:
+	* you can see live the number of groups beiing added to the tree. it is smoother, and you can really begin typing while it works.
+	* the live query is working ! haemm... not completely. adding a person is ok. deleting is... not ok.
+	* many optimizations in search / tree functions,
+	* a big rewrite of Abstract/Group/Person Items,
+	* corrected bug that made app crash [sometimes] when searching (pointed by jsj),
+	* reoganised BMessages and who deals with them,
+	* the search seems totally bug-free now,
+
+dr7:
+	* aboutbox
+	* much more stable (the tree was crashing every now and then).
+	* Command N (new person) works :)
+	* lost scroll bar when attempting to add statusbar... but where is it ?
+	* minor bug fixes.
+	* empty preferences panel.
+	* README cleaned.
+	* resolved problem about auto-renaming when first/last name are blank on first open/close.
+
+dr6:
+	* the OutlineListView WORKS ! (please don't shake it too much),
+	* the search is nearly complete,
+	* the thread was rewritten,
+	* i finished my exams, and will be coding a bit more now :-))
+	* i forgotten the rest. you will see it yourself ;-p
+	* auto-switch.
+
+dr5:
+	* extended high level tree functions,
+	* search begins to work
+	* better handling of title bar (not complete though, has bugs).
+	* changing people (when double click from tracker) works with AUTOSAVE feature :)
+	* handled the problem with BeMail (it only saw the first name at a time, now it sees First and Last)
+	* i forget many things, but they're in ;-)
+
+dr4:
+	* internal, for me. the thread was rewritten, 
+	* some new classes (PersonItem). 
+	* rewritten PeopleApp, so that it has only one window. some of you will not like, i know.
+	* cleaned a bit of code about interface appearance,
+	* added the search text control,
+	* auto rename PeopleFiles
+	* fixed some bugs,
+
+dr3:
+	* a thread to construct the content of the TreeView, no more repeat of the groups, count groups and count Persons.
+	* some bug fix, for the one-click mail and other little things.
+
+dr2:
+	* new OutlineListView with groups. repeating  of groups in some cases, the app takes some times to launch if you have many Person files (i have ~100, it takes 4 seconds on my bi-p3 800)
+
+
+TODO
+
+If you have any spare time or human senses, save birds and protect nature.
+If you have some money, donate to the BeOS driver fund on BeUnited (www.beunited.org) or to BirdLife (www.birdlife.com).
+
+best regards to you all,
+
+Olivier
