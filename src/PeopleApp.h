@@ -131,6 +131,7 @@ enum	FIELDS				{
 //====================================================================
 
 #include <Application.h>
+#include <File.h>
 
 #include "PeopleLang.h"
 

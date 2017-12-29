@@ -44,6 +44,8 @@ class BMenuItem;
 class SplitPane;
 
 
+#include <StatusBar.h>
+#include <TextControl.h>
 #include <Window.h>
 //====================================================================
 

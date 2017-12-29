@@ -15,6 +15,7 @@
 
 #include <ListItem.h>
 #include <Entry.h>
+#include <Node.h>
 #include <String.h>
 #include <stdio.h>
 
