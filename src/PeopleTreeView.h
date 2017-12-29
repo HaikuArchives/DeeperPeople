@@ -13,6 +13,7 @@
 #ifndef PEOPLETREEVIEW_H
 #define PEOPLETREEVIEW_H
 
+#include <Query.h>
 #include <TabView.h>
 #include "PeopleApp.h"
 #include "PeopleViewSizes.h"
