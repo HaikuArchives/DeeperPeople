@@ -55,7 +55,7 @@ RSRCS =
 #	- 	if your library does not follow the standard library naming scheme,
 #		you need to specify the path to the library and it's name.
 #		(e.g. for mylib.a, specify "mylib.a" or "path/mylib.a")
-LIBS =  be tracker
+LIBS = $(STDCPPLIBS) be tracker
 
 #	Specify additional paths to directories following the standard libXXX.so
 #	or libXXX.a naming scheme. You can specify full paths or paths relative
@@ -105,7 +105,7 @@ SYMBOLS :=
 DEBUGGER := 
 
 #	Specify any additional compiler flags to be used.
-COMPILER_FLAGS = -Wshadow -Wconversion -Winline -funsigned-bitfields -Wwrite-strings
+COMPILER_FLAGS = -fpermissive -Wshadow -Wconversion -Winline -funsigned-bitfields -Wwrite-strings
 
 #	Specify any additional linker flags to be used.
 LINKER_FLAGS = 
